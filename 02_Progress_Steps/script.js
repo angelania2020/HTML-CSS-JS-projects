@@ -1,55 +1,54 @@
-const progress = document.getElementById('progress')
-const prev = document.getElementById('prev')
-const next = document.getElementById('next')
-const circles = document.querySelectorAll('.circle')
+const progress = document.getElementById("progress");
+const prev = document.getElementById("prev");
+const next = document.getElementById("next");
+const circles = document.querySelectorAll(".circle");
 
-let currentActive = 1
+let currentActive = 1;
 
-next.addEventListener('click', () => {
-    currentActive++
+next.addEventListener("click", () => {
+    currentActive++;
     // console.log(currentActive)
 
     if (currentActive > circles.length) {
-        currentActive = circles.length
+        currentActive = circles.length;
     }
     // console.log(currentActive)
 
-    update()
+    update();
+});
 
-})
-
-prev.addEventListener('click', () => {
-    currentActive--
+prev.addEventListener("click", () => {
+    currentActive--;
     // console.log(currentActive)
 
     if (currentActive < 1) {
-        currentActive = 1
+        currentActive = 1;
     }
     // console.log(currentActive)
 
-    update()
-
-})
+    update();
+});
 
 function update() {
     circles.forEach((circle, idx) => {
         if (idx < currentActive) {
-            circle.classList.add('active')
+            circle.classList.add("active");
         } else {
-            circle.classList.remove('active')
+            circle.classList.remove("active");
         }
-    })
+    });
 
-    const actives = document.querySelectorAll('.active')
+    const actives = document.querySelectorAll(".active");
 
-    progress.style.width = (actives.length - 1) / (circles.length - 1) * 100 + '%'
+    progress.style.width =
+        ((actives.length - 1) / (circles.length - 1)) * 100 + "%";
 
     if (currentActive === 1) {
-        prev.disabled = true
+        prev.disabled = true;
     } else if (currentActive === circles.length) {
-        next.disabled = true
+        next.disabled = true;
     } else {
-        prev.disabled = false
-        next.disabled = false
+        prev.disabled = false;
+        next.disabled = false;
     }
 }
