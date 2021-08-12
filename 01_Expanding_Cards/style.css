@@ -1,12 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
 
 * {
     box-sizing: border-box;
-
 }
 
 body {
-    font-family: 'Muli', sans-serif;
+    font-family: "Muli", sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,7 +28,7 @@ body {
     color: #fff;
     cursor: pointer;
     flex: 0.5;
-    margin:10px;
+    margin: 10px;
     position: relative;
     transition: flex 0.7s ease-in;
 }
